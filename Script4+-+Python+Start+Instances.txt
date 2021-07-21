@@ -8,7 +8,7 @@ def lambda_handler(event, context):
     regions = [region['RegionName']
                for region in ec2_client.describe_regions()['Regions']]
 
-    # Buscar em todas as regioes / Search in all regions
+    # Buscar em todas as regioes / Searching in all regions
     for region in regions:
         ec2 = boto3.resource('ec2', region_name=region)
 
